@@ -1090,12 +1090,13 @@ def install_python_deps():
         "future": ">=0.15.2",
         "pyparsing": ">=2.0.3,<2.4.0",
         "kconfiglib": "==13.7.1",
-        "idf-component-manager": "~=1.0",
+        "packaging": "",
+        "git+https://github.com/espressif/idf-component-manager@dd53dec": "",
     }
 
-    if IDF5:
-        # Remove specific versions for IDF5 as not required
-        deps = {dep: "" for dep in deps}
+    # if IDF5:
+    #     # Remove specific versions for IDF5 as not required
+    #     deps = {dep: "" for dep in deps}
 
     python_exe_path = get_python_exe()
     installed_packages = _get_installed_pip_packages(python_exe_path)
